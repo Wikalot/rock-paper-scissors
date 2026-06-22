@@ -13,3 +13,11 @@ function getComputerChoice() {
         return "scissors";
     }
 }
+
+// Create function getHumanChoice 
+function getHumanChoice() {
+    // Prompt the user to get the users choice and store it in a variable called humanChoice
+    let humanChoice = prompt("Choose between rock, paper, scissors:", "");
+    // Return the humans choice
+    return humanChoice;
+}
