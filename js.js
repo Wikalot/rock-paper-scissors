@@ -26,6 +26,42 @@ function getHumanChoice() {
 let humanScore = 0;
 let computerScore = 0;
 
+// Create playRound function with parametrs humanChoice and computerChoice
+function playRound(humanChoice, computerChoice) {
+    // Convert humanChoice to lowercase
+    humanChoice = humanChoice.toLowerCase();
+    // Make conditionals representing the ways the human can lose or win
+    if (humanChoice === "rock" && computerChoice === "rock") {
+        return "Tie";
+    }
+    if (humanChoice === "rock" && computerChoice === "paper") {
+        return "You lose. Paper beats rock";
+    }
+    if (humanChoice === "rock" && computerChoice === "scissors") {
+        return "You win. Rock beats scissors";
+    }
+    if (humanChoice === "paper" && computerChoice === "rock") {
+        return "You win. Paper beats rock";
+    }
+    if (humanChoice === "paper" && computerChoice === "paper") {
+        return "Tie";
+    }
+    if (humanChoice === "paper" && computerChoice === "scissors") {
+        return "You lose. Scissors beats rock.";
+    }
+    if (humanChoice === "scissors" && computerChoice === "rock") {
+        return "You lose. Rock beats scissors.";
+    }
+    if (humanChoice === "scissors" && computerChoice === "paper") {
+        return "You win. Scissors beats paper.";
+    }
+    if (humanChoice === "scissors" && computerChoice === "scissors") {
+        return "Tie";
+    }
+}
+
 // Create humanSelection and computerSelection variables
 let humanSelection = getHumanChoice();
 let computerSelection = getComputerChoice();
+
+console.log(playRound(humanSelection, computerSelection));
