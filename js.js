@@ -21,3 +21,7 @@ function getHumanChoice() {
     // Return the humans choice
     return humanChoice;
 }
+
+// Create humanScore and computerScore variables
+let humanScore = 0;
+let computerScore = 0;
