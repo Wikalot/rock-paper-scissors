@@ -22,52 +22,79 @@ function getHumanChoice() {
     return humanChoice;
 }
 
-// Create humanScore and computerScore variables
-let humanScore = 0;
-let computerScore = 0;
+// Create function playGame
+function playGame() {
+    // Create humanScore and computerScore variables
+    let humanScore = 0;
+    let computerScore = 0;
 
-// Create playRound function with parametrs humanChoice and computerChoice
-function playRound(humanChoice, computerChoice) {
-    // Convert humanChoice to lowercase
-    humanChoice = humanChoice.toLowerCase();
-    // Make conditionals representing the ways the human can lose or win
-    if (humanChoice === "rock" && computerChoice === "rock") {
-        return "Tie";
+    // Create function playRound with parametrs humanChoice and computerChoice
+    function playRound(humanChoice, computerChoice) {
+        // Convert humanChoice to lowercase
+        humanChoice = humanChoice.toLowerCase();
+        // Make conditionals representing the ways the human can lose or win
+        if (humanChoice === "rock" && computerChoice === "rock") {
+            window.alert("Tie.");
+            return "Tie.";
+        }
+        if (humanChoice === "rock" && computerChoice === "paper") {
+            window.alert("You lose. Paper beats rock.");
+            computerScore++;
+            return "You lose. Paper beats rock.";
+        }
+        if (humanChoice === "rock" && computerChoice === "scissors") {
+            window.alert("You win. Rock beats scissors.");
+            humanScore++;
+            return "You win. Rock beats scissors.";
+        }
+        if (humanChoice === "paper" && computerChoice === "rock") {
+            window.alert("You win. Paper beats rock.");
+            humanScore++;
+            return "You win. Paper beats rock.";
+        }
+        if (humanChoice === "paper" && computerChoice === "paper") {
+            window.alert("Tie");
+            return "Tie";
+        }
+        if (humanChoice === "paper" && computerChoice === "scissors") {
+            window.alert("You lose. Scissors beats rock.");
+            computerScore++;
+            return "You lose. Scissors beats rock.";
+        }
+        if (humanChoice === "scissors" && computerChoice === "rock") {
+            window.alert("You lose. Rock beats scissors.");
+            computerScore++;
+            return "You lose. Rock beats scissors.";
+        }
+        if (humanChoice === "scissors" && computerChoice === "paper") {
+            window.alert("You win. Scissors beats paper.");
+            humanScore++;
+            return "You win. Scissors beats paper.";
+        }
+        if (humanChoice === "scissors" && computerChoice === "scissors") {
+            window.alert("Tie.");
+            return "Tie.";
+        }
     }
-    if (humanChoice === "rock" && computerChoice === "paper") {
-        return "You lose. Paper beats rock";
-        computerScore++;
+    // Create loop that plays 5 rounds
+    for(let i = 0; i < 5; i++){
+        // Create humanSelection and computerSelection variables
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+
+        playRound(humanSelection, computerSelection);
     }
-    if (humanChoice === "rock" && computerChoice === "scissors") {
-        return "You win. Rock beats scissors";
-        humanScore++;
+
+    if (humanScore > computerScore) {
+        window.alert("You win the game!");
     }
-    if (humanChoice === "paper" && computerChoice === "rock") {
-        return "You win. Paper beats rock";
-        humanScore++;
+    if (humanScore < computerScore) {
+        window.alert("You lose the game!");
     }
-    if (humanChoice === "paper" && computerChoice === "paper") {
-        return "Tie";
-    }
-    if (humanChoice === "paper" && computerChoice === "scissors") {
-        return "You lose. Scissors beats rock.";
-        computerScore++;
-    }
-    if (humanChoice === "scissors" && computerChoice === "rock") {
-        return "You lose. Rock beats scissors.";
-        computerScore++;
-    }
-    if (humanChoice === "scissors" && computerChoice === "paper") {
-        return "You win. Scissors beats paper.";
-        humanScore++;
-    }
-    if (humanChoice === "scissors" && computerChoice === "scissors") {
-        return "Tie";
+    if (humanScore == computerScore) {
+        window.alert("Tie!");
     }
 }
 
-// Create humanSelection and computerSelection variables
-let humanSelection = getHumanChoice();
-let computerSelection = getComputerChoice();
 
-console.log(playRound(humanSelection, computerSelection));
+
