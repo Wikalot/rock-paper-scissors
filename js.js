@@ -25,3 +25,7 @@ function getHumanChoice() {
 // Create humanScore and computerScore variables
 let humanScore = 0;
 let computerScore = 0;
+
+// Create humanSelection and computerSelection variables
+let humanSelection = getHumanChoice();
+let computerSelection = getComputerChoice();
