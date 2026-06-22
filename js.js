@@ -86,13 +86,13 @@ function playGame() {
     }
 
     if (humanScore > computerScore) {
-        window.alert("You win the game!");
+        window.alert(`You win the game! Your score: ${humanScore}, computer score: ${computerScore}`);
     }
     if (humanScore < computerScore) {
-        window.alert("You lose the game!");
+        window.alert(`You lose the game! Your score: ${humanScore}, computer score: ${computerScore}`);
     }
     if (humanScore == computerScore) {
-        window.alert("Tie!");
+        window.alert(`Tie! Your score: ${humanScore}, computer score: ${computerScore}`);
     }
 }
 
